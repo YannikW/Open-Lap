@@ -70,11 +70,17 @@ void setup()
 void loop() 
 { 
   //Flags
-  if (getValueFalling_Flag){
+  if (getValueFalling_Flag)
+  {
+    getValueFalling_Flag = false; //reset flag
+    
     fallTime = micros();  
     attachInterrupt(1, getValueRising, RISING);
   }
-  if (getValueRising_Flag){
+  if (getValueRising_Flag)
+  {
+    getValueRising_Flag = false; //reset flag
+    
     uint32_t time = micros();
   
     getTime = time - fallTime;  //Calculate puls-time
@@ -195,8 +201,6 @@ void getValueFalling()    //Puls begins
 }
 
 void getValueRising()    //Puls ended
-{
-  
-  getValueRising_Flag=true;
-  
+{ 
+  getValueRising_Flag=true;  
 }

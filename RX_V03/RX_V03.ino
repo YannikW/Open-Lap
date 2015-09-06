@@ -37,8 +37,10 @@ V0.3:
 #define TONEPIN          7  //Buzzer on pin D7
 #define BEEPLENGTH     200  //mS
 
-#define LED0PIN          8  //Sensor 0 LED on Pin D8
-#define LED1PIN          9  //Sensor 1 LED on Pin D9
+//#define LED0PIN          8  //Sensor 0 LED on Pin D8
+//#define LED1PIN          9  //Sensor 1 LED on Pin D9
+
+#define NEWPASS        500  //mS
 
 /*#######################################################
 ##                      Variables                      ##
@@ -74,10 +76,12 @@ boolean getValueRising1_Flag = false;
 uint32_t beepEnd = 0; //time for beep to end, see beep()
 boolean beepActive = false;
 
-uint32_t led0End = 0;
-boolean led0Active = false;
-uint32_t led1End = 0;
-boolean led1Active = false;
+uint32_t lastPass = 0;  //print a newline if 
+
+//uint32_t led0End = 0;
+//boolean led0Active = false;
+//uint32_t led1End = 0;
+//boolean led1Active = false;
 
 /*#######################################################
 ##                        Setup                        ##
@@ -95,10 +99,10 @@ void setup()
   //Pinmodes
   pinMode(TONEPIN, OUTPUT);
   digitalWrite(TONEPIN, LOW);
-  pinMode(LED0PIN, OUTPUT);
-  digitalWrite(LED0PIN, LOW);
-  pinMode(LED1PIN, OUTPUT);
-  digitalWrite(LED1PIN, LOW);
+//  pinMode(LED0PIN, OUTPUT);
+//  digitalWrite(LED0PIN, LOW);
+//  pinMode(LED1PIN, OUTPUT);
+//  digitalWrite(LED1PIN, LOW);
 }
 
 /*#######################################################
@@ -108,11 +112,17 @@ void setup()
 void loop() 
 { 
   //Flags
-  if (getValueFalling0_Flag){
+  if (getValueFalling0_Flag)
+  {
+    getValueFalling0_Flag = false; //reset flag
+    
     fallTime0 = micros();  
     attachInterrupt(0, getValueRising0, RISING);
   }
-  if (getValueRising0_Flag){
+  if (getValueRising0_Flag)
+  {
+    getValueRising0_Flag = false; //reset flag
+    
     uint32_t time = micros();
   
     getTime0 = time - fallTime0;  //Calculate puls-time
@@ -143,11 +153,17 @@ void loop()
   }
 
   
-  if (getValueFalling1_Flag){
+  if (getValueFalling1_Flag)
+  {
+    getValueFalling1_Flag = false; //reset flag
+    
     fallTime1 = micros();  
     attachInterrupt(1, getValueRising1, RISING);
   }
-  if (getValueRising1_Flag){
+  if (getValueRising1_Flag)
+  {
+    getValueRising1_Flag = false; //reset flag
+    
     uint32_t time = micros();
   
     getTime1 = time - fallTime1;  //Calculate puls-time
@@ -182,7 +198,11 @@ void loop()
   if(dataReady0)  //New message is ready
   {
     dataReady0 = false;
-    //Serial.print("  ||  ");
+    uint32_t pass = millis();
+    if(pass >= lastPass + NEWPASS)  //Just print an empty line
+      Serial.println();
+    lastPass = pass;
+      
     for(int8_t a = 0; a < NUMBITS ; a++)  //Calculate bit message
     { 
       //Serial.print(buf0[a]); Serial.print(" ");
@@ -208,10 +228,10 @@ void loop()
         {
           beep(BEEPLENGTH);
         }
-        if(data0 == 4 && !led0Active)  //Beep one time
-        {
-          led0(BEEPLENGTH);
-        }        
+//        if(data0 == 4 && !led0Active)  //Beep one time
+//        {
+//          led0(BEEPLENGTH);
+//        }        
       }
       else
         Serial.println("Sensor 0 : Checksum incorrect");      
@@ -225,7 +245,11 @@ void loop()
   if(dataReady1)  //New message is ready
   {
     dataReady1 = false;
-    //Serial.print("  ||  ");
+    uint32_t pass = millis();
+    if(pass >= lastPass + NEWPASS)  //Just print an empty line
+      Serial.println();
+    lastPass = pass;
+    
     for(int8_t a = 0; a < NUMBITS ; a++)  //Calculate bit message
     { 
       //Serial.print(buf1[a]); Serial.print(" ");
@@ -251,10 +275,10 @@ void loop()
         {
           beep(BEEPLENGTH);
         }
-        if(data1 == 4 && !led1Active)  //Beep one time
-        {
-          led1(BEEPLENGTH);
-        }
+//        if(data1 == 4 && !led1Active)  //Beep one time
+//        {
+//          led1(BEEPLENGTH);
+//        }
       }
       else
         Serial.println("Sensor 1 : Checksum incorrect");      
@@ -286,19 +310,19 @@ void beep(uint32_t d)
   beepEnd = millis() + d;
 }
 
-void led0(uint32_t d)
-{
-  digitalWrite(LED0PIN, HIGH); //enable beep
-  led0Active = true;
-  led0End = millis() + d;
-}
-
-void led1(uint32_t d)
-{
-  digitalWrite(LED1PIN, HIGH); //enable beep
-  led1Active = true;
-  led1End = millis() + d;
-}
+//void led0(uint32_t d)
+//{
+//  digitalWrite(LED0PIN, HIGH); //enable beep
+//  led0Active = true;
+//  led0End = millis() + d;
+//}
+//
+//void led1(uint32_t d)
+//{
+//  digitalWrite(LED1PIN, HIGH); //enable beep
+//  led1Active = true;
+//  led1End = millis() + d;
+//}
 
 uint8_t getValue(uint16_t time)
 {
