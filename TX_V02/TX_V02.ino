@@ -27,10 +27,10 @@ Start Bits | Data (e.g) | Checksum (0 if number of 1s is even or 1 if it's odd)
 #define LEDPIN          6  //LED on PA6
 
 //ID Pins
-#define ONEPIN          0
-#define TWOPIN          1
-#define FOURPIN         2
-#define EIGHTPIN        3
+#define ONEPIN          0  //PA0
+#define TWOPIN          1  //PA1
+#define FOURPIN         2  //PA2
+#define EIGHTPIN        3  //PA3
 
 /*#######################################################
 ##                      Variables                      ##
@@ -58,7 +58,7 @@ void setup()
   id |=  (!digitalRead(ONEPIN) << 0);
   id |=  (!digitalRead(TWOPIN) << 1);
   id |=  (!digitalRead(FOURPIN) << 2);
-  id |=  (!digitalRead(FOURPIN) << 3);
+  id |=  (!digitalRead(EIGHTPIN) << 3);
   
   pinMode(LEDPIN, OUTPUT);
   
