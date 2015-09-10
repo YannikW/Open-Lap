@@ -19,8 +19,8 @@ V0.2: (thanks fisch ;) )
 
 V0.3:
   - add second Sensor
-  - individual led for both sensor to check if both catched the TX
-  
+  (- individual led for both sensor to check if both catched the TX)
+  - print a newline if it's a new pass (printing millis isn't working, probably it takes to long)  
 
 /*#######################################################
 ##                       Defines                       ##
@@ -89,6 +89,7 @@ uint32_t lastPass = 0;  //print a newline if
 
 void setup() 
 {
+  delay(1000);
 
   Serial.begin(115200);
 
@@ -200,7 +201,7 @@ void loop()
     dataReady0 = false;
     uint32_t pass = millis();
     if(pass >= lastPass + NEWPASS)  //Just print an empty line
-      Serial.println();
+      Serial.println("NEW PASS");
     lastPass = pass;
       
     for(int8_t a = 0; a < NUMBITS ; a++)  //Calculate bit message
@@ -247,7 +248,7 @@ void loop()
     dataReady1 = false;
     uint32_t pass = millis();
     if(pass >= lastPass + NEWPASS)  //Just print an empty line
-      Serial.println();
+      Serial.println("NEW PASS");
     lastPass = pass;
     
     for(int8_t a = 0; a < NUMBITS ; a++)  //Calculate bit message
