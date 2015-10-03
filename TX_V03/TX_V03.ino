@@ -114,7 +114,7 @@ void zero()
   enableSignal();
   delayMicroseconds(ZERO);
   disableSignal();
-  delayMicroseconds(SPACEZERO);
+  delayMicroseconds(SPACE);
 }
 
 void one()
@@ -122,7 +122,7 @@ void one()
   enableSignal();
   delayMicroseconds(ONE);
   disableSignal();
-  delayMicroseconds(SPACEONE);
+  delayMicroseconds(SPACE);
 }
 
 void sendOut()
