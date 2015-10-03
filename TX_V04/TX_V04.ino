@@ -3,7 +3,7 @@
 
 IR Miniquad Laptimer
 
-IR Transponder V0.3 (02.10.15) (for Attiny 44)
+IR Transponder V0.4 (03.10.15) (for Attiny 44)
 
 Signal:
 Start Bits | Data (e.g) | Checksum (0 if number of 1s is even or 1 if it's odd)
