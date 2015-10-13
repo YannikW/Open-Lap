@@ -1,5 +1,5 @@
-# IR-Laptimer
-IR Laptimer for Miniquad Racing
+# Open Lap
+Open Lap is an open source IR laptimer for Miniquad racing.
 
 This projects aim is to build a IR Laptimer for Miniquad Racing.
 
