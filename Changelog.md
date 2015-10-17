@@ -8,6 +8,8 @@ V0.1:
   - laptime measurement
   
 #RX Slave
+
+V0.2:
   - completly new software for master/slave system
   - I2C communication
   - ID must be read two times to confirm (delete some false readings)
