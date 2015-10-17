@@ -1,5 +1,19 @@
 #Changelog
 
+#RX Master
+
+V0.1:
+  - completly new software for master/slave system
+  - I2C communication
+  - laptime measurement
+  
+#RX Slave
+  - completly new software for master/slave system
+  - I2C communication
+  - ID must be read two times to confirm (delete some false readings)
+
+#RX
+
 V0.2: (thanks fisch ;) )
   - shorten ISR by only setting Flags, which checked in Loop
   - beep without delay
