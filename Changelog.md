@@ -14,6 +14,10 @@ V0.2:
   - I2C communication
   - ID must be read two times to confirm (delete some false readings)
 
+V0.3 (Single)
+  - improved filtering to avoid false readings
+  - setp back to single sensor on one arduino (not sure if two sensors will be securly possible in future)
+
 #RX
 
 V0.2: (thanks fisch ;) )
