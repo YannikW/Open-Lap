@@ -17,6 +17,11 @@ V0.2:
 V0.3 (Single)
   - improved filtering to avoid false readings
   - setp back to single sensor on one arduino (not sure if two sensors will be securly possible in future)
+  
+V0.4 (Single)
+  - remove Interrupts
+  - polling sensor input states
+  - define for number of sensors (just one number to change for zwo or more sensors)
 
 #RX
 
