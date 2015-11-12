@@ -44,3 +44,10 @@ V0.5:
 V0.5.2:
   - Shorten serial commands and set baud to 250000 to speed up code
   - add a 50µS pause between data capturing and analysing. Otherwise analysing blocks measurement of second sensor and produce failure in input capture 
+
+
+#TX
+
+V0.5
+  - ID change by button press
+  - compatible to V0.6 Transponder hardware
