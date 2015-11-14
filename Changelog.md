@@ -22,6 +22,9 @@ V0.4 (Single)
   - remove Interrupts
   - polling sensor input states
   - define for number of sensors (just one number to change for two or more sensors)
+  
+V0.5 (Single)
+  - change filtering to bigger buffer, so three transponders in RX range are possible
 
 #RX
 
