@@ -47,7 +47,7 @@ Checksum is "0" if the number of ones in binary ID is even oder "1" if number of
 
 t : Time for pulse/pause (depends on bit is 0 or 1)  
 
-    "0" : 250µS  
+    "0" : 250µS  //This times maybe will be changed
     "1" : 650µS
 
 T : Time between signals. 20ms fixed + 0-10ms random (colision avoidance)
