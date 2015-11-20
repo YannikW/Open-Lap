@@ -64,5 +64,5 @@ ID 63 : 0 0  1 1 1 1 1 1  0  (T_signal = 4,65mS)
 
 ##Supported Projects
 
-Open LapTime Protocol is supported by OpenLap and [EasyRaceLapTimer](https://github.com/polyvision/EasyRaceLapTimer)
+Open LapTime Protocol is supported by [OpenLap](https://github.com/YannikW/Open-Lap) and [EasyRaceLapTimer](https://github.com/polyvision/EasyRaceLapTimer)
 	
