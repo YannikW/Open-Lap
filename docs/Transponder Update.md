@@ -21,7 +21,7 @@ Also you have to solder the 10 (or 6) pin cable correct to the 6 pins of connect
 Connect the cable to the connector like showen in this picture : 
 
 Red numbers are cable/pin number for normal 10 pin ISP connector (like the USBASP has). Green numbers are for 6 pin ISP connector.
-![Screenshot](pictures/Transponder Update/AVX Connector.png)
+![Screenshot](pictures/Transponder Update/AVX Connector.png =200x100)
 
 If you dont know which cable is pin one, you can look at your ISP connector. On one side there's a small triangle. The side with the tiangle is pin one. (In this case black cable is pin one, white pins two, ...)
 ![Screenshot](pictures/Transponder Update/pin 1 mark.jpg)
