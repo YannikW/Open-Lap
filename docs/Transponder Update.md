@@ -11,7 +11,16 @@ Note : All pictures shows the german version of Arduino, but I think you will un
 
 ##1. Hardware needed
 
-[ToDo]
+1. [USBASP](http://www.ebay.de/itm/AVR-51-Programmer-Adapter-mit-10-Pin-Kabel-ATMega-ATTiny-USBASP-USBISP-/301687762189?hash=item463dfded0d:g:zrsAAOSw-vlVpJn8) (or - more complicated - [Arduino ISP](https://www.arduino.cc/en/Tutorial/ArduinoISP))
+2. [AVX 6Pin Connector](http://www.mouser.de/Search/ProductDetail.aspx?R=009188006020062virtualkey58120000virtualkey581-009188006020062)
+3. A transponder to update :P
+
+If you use a Windows system you have to install the correct driver for the USBASP. You can find it [here](http://www.fischl.de/usbasp/). There's also a link with a description how to install this driver on Win 8 and above - this will cause problems because of driver signature.
+
+Also you have to solder the 10 (or 6) pin cable correct to the 6 pins of connector.  
+Connect the cable to the connector like showen in this picture : 
+
+[ToDo picture]
 
 ##2. Install ATtiny support for Arduino
 
