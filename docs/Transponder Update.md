@@ -20,7 +20,18 @@ If you use a Windows system you have to install the correct driver for the USBAS
 Also you have to solder the 10 (or 6) pin cable correct to the 6 pins of connector.  
 Connect the cable to the connector like showen in this picture : 
 
-[ToDo picture]
+Red numbers are cable/pin number for normal 10 pin ISP connector (like the USBASP has). Green numbers are for 6 pin ISP connector.
+![Screenshot](pictures/Transponder Update/AVX Connector.png)
+
+If you dont know which cable is pin one, you can look at your ISP connector. On one side there's a small triangle. The side with the tiangle is pin one. (In this case black cable is pin one, white pins two, ...)
+![Screenshot](pictures/Transponder Update/pin 1 mark.jpg)
+
+Your soldered connector should look like this :
+![Screenshot](pictures/Transponder Update/connector with cables.jpg)
+
+For better usability I put some hot glue and shrink tube on the cables.
+![Screenshot](pictures/Transponder Update/hot glue.jpg) ![Screenshot](pictures/Transponder Update/wiring.jpg)
+
 
 ##2. Install ATtiny support for Arduino
 
