@@ -6,6 +6,7 @@ In this tutorial I will show you how to update your transponder if necessary.
 2. Install ATtiny support for Arduino
 3. Configure upload options
 4. Connect transponder and upload
+5. Configure Fusebits (only for new transponders)
 
 Note : All pictures shows the german version of Arduino, but I think you will understand what to do ;)
 
@@ -76,6 +77,8 @@ Programmer : USBasp (if you use the one shown above)
 
 [ToDo picture]
 
+Note : If you programm a factory new attiny please do step 5 before uploading or the transponder won't work correctly. If you got a pre programmed transponder from me this step is already done.
+
 #####Check if you have opened the newest TX sketch version and press upload
 
 ![Screenshot](pictures/Transponder Update/06 Upload.png)
@@ -83,3 +86,31 @@ Programmer : USBasp (if you use the one shown above)
 #####If you done all right command line should look like this (Upload completed)
 
 ![Screenshot](pictures/Transponder Update/07 Upload abgeschlossen.png)
+
+##5. Configure Fusebits
+
+Note : If you got a pre programmed transponder from me this step is already done.
+
+If you build a transponder yourselfe you have to change the fusebits.
+On arduino this is done by the `burn bootloader` command. (The ATiny doesn't have a real bootloader like the ATmega. This command will only configure the fusebits.
+Most of the fusebits will set correct bei arduino but one setting has to be changed.
+Default arduino doesn't activate brownout detection. Brownout detection reset the controller automatic when voltage drops under a specific value. I recomend to set this value to 2.7V.
+Without brownout detection it can happen that the transponder won't boot correct and has to be restartet. Because you can't see the IR light you won't notice that the transponder don't work. 
+To activate brownout detection open
+````
+C:\Users\Yannik\AppData\Local\Arduino15\packages\attiny\hardware\avr\1.0.1\boards.txt
+````
+Note : Change your username ;)
+AppData is a hidden folder. You can access it by serching for `%appdata%`.
+
+In this file search the line
+````
+attiny.menu.clock.external16.bootloader.high_fuses=0xdf
+````
+and change to
+````
+attiny.menu.clock.external16.bootloader.high_fuses=0xdd
+````
+
+Then connect transponder via ISP and `burn bootloader`.
+After that you have to reupload the sketch. 
