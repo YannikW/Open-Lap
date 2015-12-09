@@ -4,6 +4,9 @@
 
 ##NodeMCU V1.0 ESP8266 based
 
+#####V0.5 (09.12.15)
+  - FPV Race Tracker support (should be plug and play ;) )
+
 #####V0.3 (20.11.15)
   - compatibility with Open LapTime Protocol
   - merge arduino master/slave based software into one code
