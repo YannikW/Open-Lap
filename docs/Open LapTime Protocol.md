@@ -52,14 +52,14 @@ t : Time for pulse/pause (depends on bit is 0 or 1)
 
 T : Time between signals. 20ms fixed + 0-10ms random (colision avoidance)
 
-T_signal : Total length of a single signal. (depends on ID : 2,15ms to 3,9mS)
+T_signal : Total length of a single signal. (depends on ID : 2,5ms to 3,9mS)
 
 
 ##Examples
 
-ID 01 : 0 0  0 0 0 0 0 1  1  (T_signal = 3,05mS)  
-ID 03 : 0 0  0 0 0 0 1 1  0  (T_signal = 3,05mS)  
-ID 63 : 0 0  1 1 1 1 1 1  0  (T_signal = 4,65mS)  
+ID 01 : 0 0  0 0 0 0 0 1  1  (T_signal = 2,5mS)  
+ID 03 : 0 0  0 0 0 0 1 1  0  (T_signal = 2,5mS)  
+ID 63 : 0 0  1 1 1 1 1 1  0  (T_signal = 3,9mS)  
 
 
 ##Supported Projects
