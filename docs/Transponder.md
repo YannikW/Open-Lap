@@ -1,4 +1,4 @@
-#Transponder Setup
+#Transponder
 
 1. Overview
 2. LED Blink Sequence
