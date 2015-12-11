@@ -43,7 +43,7 @@ channel : 0*8 + 1*4 + 1*2 + 0*1 = 6
 
 Here you see an example sequence at startup :
 
-![Screenshot](pictures/Transponder/blink seqence.gif)
+![Screenshot](pictures/Transponder/blink seqence.GIF)
 
 3 LEDs flashing -> Band 3
 Only the "1" stay on -> Channel 1
