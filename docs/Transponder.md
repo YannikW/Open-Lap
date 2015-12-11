@@ -45,9 +45,9 @@ Here you see an example sequence at startup :
 
 ![Screenshot](pictures/Transponder/blink seqence.GIF)
 
-3 LEDs flashing -> Band 3
-Only the "1" stay on -> Channel 1
-So this is ID 33.
+3 LEDs flashing -> Band 3  
+Only the "1" stay on -> Channel 1  
+So this is ID 33.  
 
 ##3. Change ID
 
