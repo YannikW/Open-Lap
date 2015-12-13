@@ -63,7 +63,7 @@ While this the blue led on the NodeMCU should flash very fast.
 
 Performing this is a bit tricky. Sometime it will not work, and the blue led doesn't begin flashing and arduino says `uploading` forever.
 
-Just repeat the steps to try it again. Even I need two or three attempts to get it work.
+If this happens just repeat the steps to try it again. Even I need two or three attempts to get it work sometimes.
 
 ##4. Hardware Connection
 
