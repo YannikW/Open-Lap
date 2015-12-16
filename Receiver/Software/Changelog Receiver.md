@@ -4,6 +4,11 @@
 
 ##NodeMCU V1.0 ESP8266 based
 
+#####V0.6 (16.12.15)
+  - FPV Race Tracker wireless support 
+  - EasyRaceLapTimer wireless support (reset doesn't work yet)
+  - Complete auto selection. Every software wired or wireless works just plug and play
+
 #####V0.5 (09.12.15)
   - FPV Race Tracker support (should be plug and play ;) )
 
