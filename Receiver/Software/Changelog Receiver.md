@@ -4,6 +4,10 @@
 
 ##NodeMCU V1.0 ESP8266 based
 
+#####V0.6.1 (17.12.15)
+  - Bugfix. V0.6 don't compile an Arduino IDE >=1.6.6 .
+  - V0.6.1 now works on V1.6.7 of Arduini IDE
+
 #####V0.6 (16.12.15)
   - FPV Race Tracker wireless support 
   - EasyRaceLapTimer wireless support (reset doesn't work yet)
