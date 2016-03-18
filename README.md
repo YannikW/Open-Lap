@@ -1,3 +1,8 @@
+#NOTE:
+##OpenLap will get a V2! There are not much information to show yet, but when we have something to show, we will do! So please stay patient and check FB group for any news! 
+###One more thing : OpenLap V1 Transponders will get a workaround, but this workaround isnt easy to make, so we wanna reduce this to a minimum.. Before you build some transponders yourselfe, wait for the new ones ;) It wont take so long..  
+
+
 ![Screenshot](docs/pictures/Readme/OpenLap Logo.png)
 
 OpenLap is an open source IR laptimer for miniquad racing.
